@@ -1,6 +1,6 @@
 {
   "name": "js-utils",
-  "version": "0.0.7",
+  "version": "0.0.2",
   "description": "Simple Js utils",
   "main": "lib/index.js",
   "repository": {
