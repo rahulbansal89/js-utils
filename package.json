@@ -1,27 +1,25 @@
 {
-  "name": "simply-js-utils",
+  "name": "js-utils",
   "version": "0.0.7",
   "description": "Simple Js utils",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sameer-ahmed/js-utils.git"
+    "url": "git+https://github.com/rahulbansal89/js-utils.git"
   },
-  "author": "sameer-ahmed <me@sameerahmed.in>",
+  "author": "Rahul Bansal <rahulbansal.171089@gmail.com>",
   "license": "MIT",
   "private": false,
   "bugs": {
-    "url": "https://github.com/sameer-ahmed/js-utils/issues"
+    "url": "https://github.com/rahulbansal89/js-utils/issues"
   },
-  "homepage": "https://github.com/sameer-ahmed/js-utils#readme",
+  "homepage": "https://github.com/rahulbansal89/js-utils#readme",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "compile": "node_modules/babel-cli/bin/babel.js --presets es2015 --plugins transform-async-to-generator -d lib/ src/",
-    "prepublish": "npm run compile",
-    "test": "yarn compile; jest --coverage",
-    "coverage": "cat ./coverage/lcov.info | coveralls"
+    "compile": "node_modules/babel-cli/bin/babel.js src --out-dir lib",
+    "prepublish": "npm run compile"
   },
   "jest": {
     "testPathIgnorePatterns": [
@@ -35,14 +33,16 @@
     "utils",
     "simple"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "dateformat": "^4.0.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "coveralls": "^3.0.1",
-    "jest": "^22.4.3",
-    "moment": "^2.22.1"
+    "jest": "^22.4.3"
   }
 }
