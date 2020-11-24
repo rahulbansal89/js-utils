@@ -1,6 +1,6 @@
 import Utils from "./index";
 
-export const Regex = {
+const Regex = {
     email: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
     mobile: /^[6789]{1}\d{9}$/,
     year: /^\d{4}$/,
@@ -21,7 +21,7 @@ export const Regex = {
     numberOnly: /^[0-9]*$/
 };
 
-export const Refinements = (t) => ({
+const Refinements = (t) => ({
     emailEmptyAllowed: t.refinement(t.maybe(t.String), (s) => Utils.isUndefinedOrNullOrEmpty(s) || Regex.plainEmail.test(s)),
     email: t.refinement(t.String, (s) => Regex.email.test(s)),
     mobile: t.refinement(t.String, (s) => Regex.mobile.test(s)),
@@ -49,3 +49,8 @@ export const Refinements = (t) => ({
         return num > 0;
     }),
 })
+
+module.exports = {
+    Regex,
+    Refinements,
+};
