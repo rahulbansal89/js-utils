@@ -79,9 +79,12 @@ const Utils = {
 
     getFilenameFromUrl: (url) => {
         if (url) {
-            var m = url.toString().match(/.*\/(.+?)\./);
-            if (m && m.length > 1) {
-                return m[1];
+            let paths = decodeURIComponent(url).split('?');
+            if (paths && paths.length > 0) {
+                paths = paths[0].split('/')
+            }
+            if (paths && paths.length > 0) {
+                return paths[paths.length - 1];
             }
         }
         return "";
