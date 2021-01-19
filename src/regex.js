@@ -18,13 +18,17 @@ const Regex = {
     amount: /^([1-9]{1},?.?){1,50}$/,
     turnover: /^(,?\d{1},?){0,8}$/,
     PAGING_REGEX_QUERY: /page=[0-9]+/,
-    numberOnly: /^[0-9]*$/
+    number: /^\d*(\.\d+)?$/,
+    url: /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/,
+    htmlString: /<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/g,
 };
 
 const Refinements = (t) => ({
     emailEmptyAllowed: t.refinement(t.maybe(t.String), (s) => Utils.isUndefinedOrNullOrEmpty(s) || Regex.plainEmail.test(s)),
     email: t.refinement(t.String, (s) => Regex.email.test(s)),
     mobile: t.refinement(t.String, (s) => Regex.mobile.test(s)),
+    number: t.refinement(t.String, (s) => Regex.number.test(s)),
+    url: t.refinement(t.String, (s) => Regex.url.test(s)),
     pinCode: t.refinement(t.String, (s) => Regex.pincode.test(s)),
     year: t.refinement(t.String, (s) => Regex.year.test(s)),
     pancard: t.refinement(t.String, (s) => Regex.pancard.test(s)),
@@ -38,6 +42,7 @@ const Refinements = (t) => ({
     amount: t.refinement(t.Number, (s) => Regex.amount.test(s)),
     turnover: t.refinement(t.Number, (s) => Regex.turnover.test(s)),
     validOtp: t.refinement(t.String, (s) => Regex.otp.test(s)),
+    htmlString: t.refinement(t.String, (s) => Regex.htmlString.test(s)),
     amountExceptZero: t.refinement(t.Number, (s) => {
         if (!s) {
             return false;
