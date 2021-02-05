@@ -524,6 +524,15 @@ const Utils = {
         }
         return `${+hour > 12 ? +hour - 12 : hour} ${Utils.timeToMeridiem(+hour)}`;
     },
+
+    toTitleCase(str) {
+        return str.split('_').join(' ').split('-').join(' ').replace(/\s+/g, ' ').replace(
+            /\w\S*/g,
+            function(txt) {
+              return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+            }
+        )
+    },
 };
 
 module.exports = Utils;
