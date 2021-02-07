@@ -2,7 +2,7 @@
   "name": "js-utils",
   "version": "0.0.2",
   "description": "Simple Js utils",
-  "main": "lib/index.js",
+  "main": "src",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rahulbansal89/js-utils.git"
