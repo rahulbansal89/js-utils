@@ -21,6 +21,8 @@ const Regex = {
     number: /^\d*(\.\d+)?$/,
     url: /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/,
     htmlString: /<([A-Za-z][A-Za-z0-9]*)\b[^>]*>(.*?)<\/\1>/g,
+    SPECIAL_CHAR_REGEX: /\s+/g,
+    MULTIPLE_SPACE_REGEX: /[^\w\d\s-]/g,
 };
 
 const Refinements = (t) => ({
