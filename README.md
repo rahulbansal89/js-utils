@@ -1,11 +1,15 @@
 # js-utils
 
 ## Install
+```bash
 yarn add https://github.com/rahulbansal89/js-utils.git\#master
+```
 
 ## Update
+```bash
 yarn remove js-utils
 yarn add https://github.com/rahulbansal89/js-utils.git\#master
+```
 
 use:
 
