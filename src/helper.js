@@ -103,6 +103,27 @@ const Helper = {
             selectedLocation && selectedLocation.coordinates,
         ) || '';
     },
+    getTaxData: (supplier = {}, product = {}) => {
+        if (Utils.isUndefinedOrNullOrEmptyObject(supplier)) {
+            return 0;
+        }
+        const { settings = {} } = supplier;
+        if (Utils.isUndefinedOrNullOrEmptyObject(settings)) {
+            return 0;
+        }
+        if (Utils.isUndefinedOrNullOrEmptyObject(product)) {
+            return 0;
+        }
+        const taxRates = settings[SETTING_TYPES.TAX_RATES];
+        if (Utils.isUndefinedOrNullOrEmptyList(taxRates)) {
+            return 0;
+        }
+        const { category, subCategory } = product;
+        if (!category || !subCategory) {
+            return 0;
+        }
+        return taxRates.find(item => item && item.category && item.subCategory && item.category === category && item.subCategory === subCategory);
+    },
 };
 
 module.exports = Helper;
