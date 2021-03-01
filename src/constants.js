@@ -588,6 +588,62 @@ const DAYS_MAP = {
     6: 'SATURDAY',
 };
 
+const SHOP_THEMES = {
+    CLASSIC: 'CLASSIC',
+    LETS_SHOP: 'LETS_SHOP',
+    MITTNALIER: 'MITTNALIER',
+    SPRING: 'SPRING',
+    FRESH: 'FRESH',
+    BEAUTY: 'BEAUTY',
+    ELECTRONE: 'ELECTRONE',
+    HARMONY: 'HARMONY',
+};
+
+const CATALOG_THEMES = {
+    METRO: 'METRO',
+    FULL_WIDTH: 'FULL_WIDTH',
+    LEFT_SIDEBAR: 'LEFT_SIDEBAR',
+    NO_SIDEBAR: 'NO_SIDEBAR',
+    RIGHT_SIDEBAR: 'RIGHT_SIDEBAR',
+    THREE_GRID: 'THREE_GRID',
+    SIX_GRID: 'SIX_GRID',
+    LIST_VIEW: 'LIST_VIEW',
+};
+
+const PRODUCT_THEMES = {
+    THREE_COL_LEFT: 'THREE_COL_LEFT',
+    THREE_COL_RIGHT: 'THREE_COL_RIGHT',
+    THREE_COL: 'THREE_COL',
+    ACCORDION: 'ACCORDION',
+    LEFT_IMAGE: 'LEFT_IMAGE',
+    LEFT_SIDEBAR: 'LEFT_SIDEBAR',
+    NO_SIDEBAR: 'NO_SIDEBAR',
+    RIGHT_IMAGE: 'RIGHT_IMAGE',
+    RIGHT_SIDEBAR: 'RIGHT_SIDEBAR',
+    VERTICAL_TAB: 'VERTICAL_TAB',
+};
+
+const COLOR_OPTIONS = {
+    COLOR1: '#ff4c3b',
+    COLOR2: '#3fdda7',
+    COLOR3: '#f0b54d',
+    COLOR4: '#e4604a',
+    COLOR5: '#d4b196',
+    COLOR6: '#866e6c',
+    COLOR7: '#cc2121',
+    COLOR8: '#dc457e',
+    COLOR9: '#6d7e87',
+    COLOR10: '#fa869b',
+    COLOR11: '#81ba00',
+    COLOR12: '#fe816d',
+    COLOR13: '#01effc',
+    COLOR14: '#5d7227',
+    COLOR15: '#ff9944',
+    COLOR16: '#5fcbc4',
+    COLOR17: '#e38888',
+    COLOR18: '#000000',
+};
+
 module.exports = {
     COLORS,
     DATE_FILTERS_TYPES,
@@ -617,4 +673,8 @@ module.exports = {
     PRODUCT_TYPE,
     SETTING_TYPES,
     DAYS_MAP,
+    SHOP_THEMES,
+    CATALOG_THEMES,
+    PRODUCT_THEMES,
+    COLOR_OPTIONS,
 };
