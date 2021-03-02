@@ -8,12 +8,6 @@ const Helper = {
         }
         return settings[SETTING_TYPES.STORE_STATUS] === AVAILABILITY.YES;
     },
-    isDeliveryActive: ({ settings = {} } = {}) => {
-        if (Utils.isUndefinedOrNullOrEmptyObject(settings)) {
-            return true;
-        }
-        return settings[SETTING_TYPES.STORE_DELIVERY_STATUS] === AVAILABILITY.YES;
-    },
     checkIfStoreOpen: ({ settings = {} } = {}) => {
         if (!Helper.isStoreActive({ settings })) {
             return false;
@@ -39,6 +33,12 @@ const Helper = {
             return true;
         }
         return false;
+    },
+    isDeliveryActive: ({ settings = {} } = {}) => {
+        if (Utils.isUndefinedOrNullOrEmptyObject(settings)) {
+            return true;
+        }
+        return settings[SETTING_TYPES.STORE_DELIVERY_STATUS] === AVAILABILITY.YES;
     },
     checkIfDeliveryOpen: (supplier = {}) => {
         if (!Helper.isDeliveryActive(supplier)) {
@@ -68,6 +68,9 @@ const Helper = {
         return false;
     },
     checkIfDeliveryServicable: (supplier = {}, selectedLocation = {}) => {
+        if (!Helper.checkIfDeliveryOpen(supplier)) {
+            return false;
+        }
         if (Utils.isUndefinedOrNullOrEmptyObject(supplier)) {
             return false;
         }
