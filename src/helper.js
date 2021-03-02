@@ -68,6 +68,9 @@ const Helper = {
         return false;
     },
     checkIfDeliveryServicable: (supplier = {}, selectedLocation = {}) => {
+        if (!Helper.checkIfStoreOpen(supplier)) {
+            return false;
+        }
         if (!Helper.checkIfDeliveryOpen(supplier)) {
             return false;
         }
