@@ -68,10 +68,10 @@ const Helper = {
         return false;
     },
     checkIfDeliveryServicable: (supplier = {}, selectedLocation = {}) => {
-        if (!Helper.checkIfStoreOpen(supplier)) {
+        if (!Helper.isStoreActive(supplier)) {
             return false;
         }
-        if (!Helper.checkIfDeliveryOpen(supplier)) {
+        if (!Helper.isDeliveryActive(supplier)) {
             return false;
         }
         if (Utils.isUndefinedOrNullOrEmptyObject(supplier)) {
